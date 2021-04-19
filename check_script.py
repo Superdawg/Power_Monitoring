@@ -105,9 +105,9 @@ class PowerMonitor(object):
         self.state = apc.parse(apc.get(), strip_units=True)
 
         if self.state['STATUS'] != "ONLINE":
-            print("Power status is %s.  This is bad" % self.state['STATUS'])
+            self.log.error("Power status is %s.  This is bad" % self.state['STATUS'])
             self.notifyEmails()
-        print("All is well, nothing to see here.")
+        self.log.info("All is well, nothing to see here.")
 
 if __name__ == "__main__":
     PM = PowerMonitor()
