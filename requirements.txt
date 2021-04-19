@@ -1,0 +1,2 @@
+# This is the list of requirements to run this software.
+apcaccess==0.0.13
