@@ -1,0 +1,10 @@
+[Unit]
+Description=Check the status of power
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/power_check --email-recipients user@email.com --email-relay 127.0.0.1
+
+[Install]
+WantedBy=multi-user.target
