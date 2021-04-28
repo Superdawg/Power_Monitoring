@@ -107,7 +107,9 @@ class PowerMonitor(object):
         if self.state['STATUS'] != "ONLINE":
             self.log.error("Power status is %s.  This is bad" % self.state['STATUS'])
             self.notifyEmails()
+            sys.exit(0)
         self.log.info("All is well, nothing to see here.")
+        sys.exit(0)
 
 if __name__ == "__main__":
     PM = PowerMonitor()
