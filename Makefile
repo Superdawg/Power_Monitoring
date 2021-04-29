@@ -5,8 +5,6 @@ install:
 	install -m 0644 -o root -g root power_check.service /usr/lib/systemd/system/power_check.service
 	@echo Reloading systemd database
 	-systemctl daemon-reload
-
-start:
 	@echo Enabling and starting the power_check timer.
 	systemctl enable power_check.timer
 	systemctl start power_check.timer
